@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main-navigation></main-navigation>
+    <div class="view-wrapper">
+        <router-view />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import { useStore } from 'vuex';
+
+import MainNavigation from './components/MainNavigation.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    name: "App",
+    components: {
+        MainNavigation
+    },
+    setup() {
+        // const store = useStore();
+
+        // console.log(store.dispatch('list/fetch_countries'));
+
+    }
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.view-wrapper{
+    padding: 16px 32px;
 }
 </style>
