@@ -1,6 +1,9 @@
 const listGetters = {
-    get_animals(state) {
-        return state.animals;
+    get_countries(state) {
+        return state.countries;
+    },
+    get_selected(state) {
+        return state.selected;
     },
 };
 

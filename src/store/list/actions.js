@@ -1,11 +1,12 @@
 const listActions = {
-    async fetch_countries() {
-        return await fetch('assets/countries.json')
+    async fetch_countries({ commit }) {
+        await fetch('assets/countries.json')
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                commit('set_countries', data);
             });
     }
+
 };
 
 export default listActions;
